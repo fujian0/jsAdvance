@@ -36,7 +36,40 @@ var num = 18
   console.log(typeof num)
 var str = 'this is string'
   console.log(typeof str)
+var bool = true
+console.log(typeof bool);
+// typeof: 返回的是数据类型的字符串表达形式
+//1. 基本类型
+var a
+console.log(a, typeof a, a===undefined) // undefined 'undefined' true
+console.log(a===typeof a) // false
 
+a = 3
+console.log(typeof a === 'number')
+a = 'atguigu'
+console.log(typeof a === 'string')
+a = true
+console.log(typeof a === 'boolean')
+
+a = null
+console.log(a===null) // true
+console.log(typeof a) // 'object'
+
+console.log('--------------------------------')
+
+//2. 对象类型
+var b1 = {
+  b2: [2, 'abc', console.log],
+  b3: function () {
+    console.log('b3()')
+  }
+}
+console.log(b1 instanceof Object, typeof b1) // true 'object'
+console.log(b1.b2 instanceof Array, typeof b1.b2) // true 'object'
+console.log(b1.b3 instanceof Function, typeof b1.b3) // true 'function'
+
+console.log(typeof b1.b2[2]) // 'function'
+console.log(b1.b2[2]('abc')) // 'abc' undefined
 </script>
 </body>
 </html>
